@@ -12,7 +12,7 @@ class AnimalTestCase(TestCase):
         # upload a csv file
         data = open("/code/test_data/Rent-Roll.csv", 'rb')        
         file_ = SimpleUploadedFile(content=data.read(), name="file_content",content_type='multipart/form-data')
-        response=self.client.post("", {'file': file_})
+        response=self.client.post("/upload/", {'file': file_})
         # print(response.content)
 
         # verify the information is in the db

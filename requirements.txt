@@ -1,1 +1,3 @@
 django
+django-tables2
+django-bootstrap3
