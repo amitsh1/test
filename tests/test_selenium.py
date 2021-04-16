@@ -1,8 +1,9 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.support.ui import WebDriverWait
 from okapi.models import Rent
+from selenium.webdriver.support import expected_conditions as EC
 
 def get_table(driver,table_id):
     table = driver.find_element(By.ID, table_id)
@@ -70,8 +71,13 @@ class MySeleniumTests(StaticLiveServerTestCase):
         # verify data types in db
         assert type(objects[0].AnnualRent)==int
 
-        self.selenium.get('%s%s' % (self.live_server_url, '/'))
-        
+        # close alert
+        WebDriverWait(self.selenium, 3).until(EC.alert_is_present(),
+                                    'Timed out waiting for PA creation ' +
+                                    'confirmation popup to appear.')
+
+        alert = self.selenium.switch_to.alert
+        alert.accept()        
         headers,rows = get_table(self.selenium,'rent_table')
         assert headers == ["PropertyName","City","tenents"]        
         assert len(rows)==2     

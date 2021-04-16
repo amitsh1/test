@@ -1,6 +1,4 @@
-{% block navbar %}
-    {% include  'navbar.html' %}
-{% endblock %}
+{% extends "base.html" %}
 {% block content %}
 
 <form action="" method="get">
@@ -9,19 +7,19 @@
     <input type="submit" value="Submit">
 </form>
 
-<!-- {% if messages %}
+{% if messages %}
 {% for message in messages %}
 <script>
     alert('{{ message }}');
 </script>
 {% endfor %}
 
-<ul class="messages">
+<!-- <ul class="messages">
     {% for message in messages %}
     <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
     {% endfor %}
-</ul>
-{% endif %} -->
+</ul> -->
+{% endif %}
 
 <table class="table table-bordered" id="rent_table">
     <thead>
