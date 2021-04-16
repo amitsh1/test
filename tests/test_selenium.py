@@ -41,7 +41,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.selenium.get('%s%s' % (self.live_server_url, '/'))
 
         headers,rows = get_table(self.selenium,'rent_table')
-        assert headers == ["PropertyName","City","tenents"]  
+        assert headers == ["PropertyName","City","Tenents"]  
         assert len(rows)==0
 
 
@@ -79,7 +79,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         alert = self.selenium.switch_to.alert
         alert.accept()        
         headers,rows = get_table(self.selenium,'rent_table')
-        assert headers == ["PropertyName","City","tenents"]        
+        assert headers == ["PropertyName","City","Tenents"]        
         assert len(rows)==2     
         assert rows[0][0]=='The Blue Building'
         assert rows[1][0]=='The Red Building'

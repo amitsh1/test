@@ -48,12 +48,12 @@ def tt(request):
         result.append({
             "PropertyName": key,
             "City":group[0].City,
-            "tenents": ",".join([rent.TenantName for rent in sorted(group,key=lambda x: x.UnitSqft)]),
+            "Tenents": ",".join([rent.TenantName for rent in sorted(group,key=lambda x: x.UnitSqft)]),
             
         })
 
     
-    return render(request, 'table2.html', 
+    return render(request, 'table.html', 
     {
         'form':form,
         'data': {
@@ -61,7 +61,7 @@ def tt(request):
 
 
 
-        "columns":["PropertyName","City","tenents"],
+        "columns":["PropertyName","City","Tenents"],
         "rows":result
                 },     
     }

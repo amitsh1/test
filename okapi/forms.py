@@ -6,7 +6,7 @@ class UploadFileForm(forms.Form):
 
 
 class TForm(forms.Form):
-    PropertySqft_min = forms.IntegerField(required=False)    
-    PropertySqft_max = forms.IntegerField(required=False)  
+    PropertySqft_min = forms.IntegerField(required=False,label='min unit Sqft')    
+    PropertySqft_max = forms.IntegerField(required=False,label='max unit Sqft')  
 
 
