@@ -2,7 +2,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm,TForm
 from .utils import insert_csv_to_db
-from .models import Rent,Concat
+from .models import Rent
 
 from django.contrib import messages
 
