@@ -1,0 +1,51 @@
+{% block navbar %}
+    {% include  'navbar.html' %}
+{% endblock %}
+{% block content %}
+
+<form action="" method="get">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+<!-- {% if messages %}
+{% for message in messages %}
+<script>
+    alert('{{ message }}');
+</script>
+{% endfor %}
+
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %} -->
+
+<table class="table table-bordered" id="rent_table">
+    <thead>
+      <tr>
+        {% for column in data.columns %}
+        <th scope="col">{{ column }}</th>
+        {% endfor %}          
+      </tr>
+    </thead>
+    <tbody>
+      
+        {% for row in data.rows %}
+        <tr>
+            {% for key, value in row.items %} 
+                <td>{{ value }}</td>
+            {% endfor %}
+
+
+            
+        </tr>
+        {% endfor %}             
+        
+    </tbody>
+  </table>
+
+
+  {% endblock %}  

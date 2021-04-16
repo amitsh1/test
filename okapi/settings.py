@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'okapi',
-    'django_tables2',
-    'bootstrap3'
+    # 'django_tables2',
+    # 'bootstrap3',
+    # 'django_filters'
 ]
 
 MIDDLEWARE = [

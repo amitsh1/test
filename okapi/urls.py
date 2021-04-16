@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('', views.table, name='index'),
+    # path('', views.FilteredPersonListView.as_view(), name='index'),
+    path('', views.tt, name='index'),
     path('upload/', views.upload, name='upload'),
 ]
 
